@@ -30,7 +30,7 @@ class BaseCell: UICollectionViewCell {
         
         seperatorView.heightAnchor.constraint(equalToConstant: 2).isActive = true
         
-        let stackView = UIStackView(arrangedSubviews: [numberLabel, seperatorView])
+        let stackView = UIStackView(arrangedSubviews: [numberLabel])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         
