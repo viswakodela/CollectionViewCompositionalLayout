@@ -9,25 +9,31 @@
 /* Begin PBXBuildFile section */
 		BDE47E4722B540F0003511C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE47E4622B540F0003511C5 /* AppDelegate.swift */; };
 		BDE47E4922B540F0003511C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE47E4822B540F0003511C5 /* SceneDelegate.swift */; };
-		BDE47E4B22B540F0003511C5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE47E4A22B540F0003511C5 /* BaseViewController.swift */; };
+		BDE47E4B22B540F0003511C5 /* GridController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE47E4A22B540F0003511C5 /* GridController.swift */; };
 		BDE47E4E22B540F0003511C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDE47E4C22B540F0003511C5 /* Main.storyboard */; };
 		BDE47E5022B540F1003511C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDE47E4F22B540F1003511C5 /* Assets.xcassets */; };
 		BDE47E5322B540F1003511C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDE47E5122B540F1003511C5 /* LaunchScreen.storyboard */; };
 		BDE47E5B22B54BC0003511C5 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE47E5A22B54BC0003511C5 /* BaseCell.swift */; };
 		BDE47E5F22B55C50003511C5 /* DistinctSectionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE47E5E22B55C50003511C5 /* DistinctSectionsController.swift */; };
+		BDE47E6122B565CF003511C5 /* CollectionViewwithBadgeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE47E6022B565CF003511C5 /* CollectionViewwithBadgeController.swift */; };
+		BDE47E6322B56889003511C5 /* BadgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE47E6222B56889003511C5 /* BadgeCell.swift */; };
+		BDE47E6522B57115003511C5 /* NestedGroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE47E6422B57115003511C5 /* NestedGroupController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BDE47E4322B540F0003511C5 /* CollectionViewCompositionalLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionViewCompositionalLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDE47E4622B540F0003511C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDE47E4822B540F0003511C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BDE47E4A22B540F0003511C5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		BDE47E4A22B540F0003511C5 /* GridController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridController.swift; sourceTree = "<group>"; };
 		BDE47E4D22B540F0003511C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BDE47E4F22B540F1003511C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BDE47E5222B540F1003511C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BDE47E5422B540F1003511C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDE47E5A22B54BC0003511C5 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		BDE47E5E22B55C50003511C5 /* DistinctSectionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistinctSectionsController.swift; sourceTree = "<group>"; };
+		BDE47E6022B565CF003511C5 /* CollectionViewwithBadgeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewwithBadgeController.swift; sourceTree = "<group>"; };
+		BDE47E6222B56889003511C5 /* BadgeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCell.swift; sourceTree = "<group>"; };
+		BDE47E6422B57115003511C5 /* NestedGroupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedGroupController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +68,12 @@
 			children = (
 				BDE47E4622B540F0003511C5 /* AppDelegate.swift */,
 				BDE47E4822B540F0003511C5 /* SceneDelegate.swift */,
-				BDE47E4A22B540F0003511C5 /* BaseViewController.swift */,
+				BDE47E4A22B540F0003511C5 /* GridController.swift */,
 				BDE47E5E22B55C50003511C5 /* DistinctSectionsController.swift */,
+				BDE47E6022B565CF003511C5 /* CollectionViewwithBadgeController.swift */,
+				BDE47E6422B57115003511C5 /* NestedGroupController.swift */,
 				BDE47E5A22B54BC0003511C5 /* BaseCell.swift */,
+				BDE47E6222B56889003511C5 /* BadgeCell.swift */,
 				BDE47E4C22B540F0003511C5 /* Main.storyboard */,
 				BDE47E4F22B540F1003511C5 /* Assets.xcassets */,
 				BDE47E5122B540F1003511C5 /* LaunchScreen.storyboard */,
@@ -144,11 +153,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDE47E6122B565CF003511C5 /* CollectionViewwithBadgeController.swift in Sources */,
 				BDE47E5B22B54BC0003511C5 /* BaseCell.swift in Sources */,
-				BDE47E4B22B540F0003511C5 /* BaseViewController.swift in Sources */,
+				BDE47E6522B57115003511C5 /* NestedGroupController.swift in Sources */,
+				BDE47E4B22B540F0003511C5 /* GridController.swift in Sources */,
 				BDE47E4722B540F0003511C5 /* AppDelegate.swift in Sources */,
 				BDE47E5F22B55C50003511C5 /* DistinctSectionsController.swift in Sources */,
 				BDE47E4922B540F0003511C5 /* SceneDelegate.swift in Sources */,
+				BDE47E6322B56889003511C5 /* BadgeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

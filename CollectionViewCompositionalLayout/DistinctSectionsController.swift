@@ -10,9 +10,7 @@ import UIKit
 
 class DistinctSectionsController: UIViewController {
     
-    
-    
-    private let baseCellID = "baseCellID"
+    private let distinctCellID = "distinctCellID"
     
     enum SectionLayoutKind: Int, CaseIterable {
         case list, grid5, grid3
@@ -38,15 +36,15 @@ class DistinctSectionsController: UIViewController {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
             
             guard let sectionLayoutKind = SectionLayoutKind(rawValue: sectionIndex) else {return nil}
-            let colums = sectionLayoutKind.columnCount
+            let columsCount = sectionLayoutKind.columnCount
             
             let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
             
-            let groupHeight = colums == 1 ? NSCollectionLayoutDimension.absolute(44) : NSCollectionLayoutDimension.fractionalWidth(0.2)
+            let groupHeight = columsCount == 1 ? NSCollectionLayoutDimension.absolute(44) : NSCollectionLayoutDimension.fractionalWidth(0.2)
             let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: groupHeight)
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: colums)
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: columsCount)
             
             let section = NSCollectionLayoutSection(group: group)
             section.contentInsets = NSDirectionalEdgeInsets(top: 15, leading: 10, bottom: 15, trailing: 10)
@@ -69,7 +67,8 @@ class DistinctSectionsController: UIViewController {
     
     fileprivate func configureLayout() {
         view.backgroundColor = .white
-        collectionView.register(BaseCell.self, forCellWithReuseIdentifier: baseCellID)
+        collectionView.register(BaseCell.self, forCellWithReuseIdentifier: distinctCellID)
+        navigationItem.title = "Distinct Layout"
         
         view.addSubview(collectionView)
         collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
@@ -93,7 +92,7 @@ extension DistinctSectionsController: UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: baseCellID, for: indexPath) as! BaseCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: distinctCellID, for: indexPath) as! BaseCell
         cell.numberLabel.text = "\(indexPath.item + 1)"
         if indexPath.item % 2 == 0 {
             cell.backgroundColor = .red

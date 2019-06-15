@@ -8,9 +8,10 @@
 
 import UIKit
 
-class BaseViewController: UIViewController {
+class GridViewController: UIViewController {
     
-    private let baseCellID = "baseCellID"
+    private let gridCellID = "gridCellID"
+    private let badgeElementKind = "badgeElementKind"
     
     
     override func viewDidLoad() {
@@ -20,8 +21,13 @@ class BaseViewController: UIViewController {
     
     func createLayout() -> UICollectionViewLayout {
         
+        let badgeAnchor = NSCollectionLayoutAnchor(edges: [.top, .trailing], fractionalOffset: CGPoint(x: 0.3, y: -0.3))
+        let badgeSize = NSCollectionLayoutSize(widthDimension: .absolute(20), heightDimension: .absolute(20))
+        
+        let badge = NSCollectionLayoutSupplementaryItem(layoutSize: badgeSize, elementKind: badgeElementKind, containerAnchor: badgeAnchor)
+        
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.2), heightDimension: .fractionalHeight(1))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let item = NSCollectionLayoutItem(layoutSize: itemSize, supplementaryItems: [badge])
         item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalWidth(0.2))
@@ -49,7 +55,8 @@ class BaseViewController: UIViewController {
     
     fileprivate func configureLayout() {
         view.backgroundColor = .white
-        collectionView.register(BaseCell.self, forCellWithReuseIdentifier: baseCellID)
+        collectionView.register(BaseCell.self, forCellWithReuseIdentifier: gridCellID)
+        navigationItem.title = "Grid Layout"
         
         view.addSubview(collectionView)
         collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
@@ -59,13 +66,13 @@ class BaseViewController: UIViewController {
     }
 }
 
-extension BaseViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension GridViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: baseCellID, for: indexPath) as! BaseCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: gridCellID, for: indexPath) as! BaseCell
         cell.numberLabel.text = "\(indexPath.item + 1)"
         if indexPath.item % 2 == 0 {
             cell.backgroundColor = .red
