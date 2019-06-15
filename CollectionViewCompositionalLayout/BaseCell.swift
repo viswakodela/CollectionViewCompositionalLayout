@@ -14,16 +14,32 @@ class BaseCell: UICollectionViewCell {
         createLayout()
     }
     
+    let numberLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Hello"
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        return label
+    }()
+    
     fileprivate func createLayout() {
         let seperatorView = UIView()
         seperatorView.translatesAutoresizingMaskIntoConstraints = false
         seperatorView.backgroundColor = .white
         
-        addSubview(seperatorView)
-        seperatorView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        seperatorView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        seperatorView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        seperatorView.heightAnchor.constraint(equalToConstant: 10).isActive = true
+        seperatorView.heightAnchor.constraint(equalToConstant: 2).isActive = true
+        
+        let stackView = UIStackView(arrangedSubviews: [numberLabel, seperatorView])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        
+        addSubview(stackView)
+        stackView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        
     }
     
     required init?(coder: NSCoder) {
