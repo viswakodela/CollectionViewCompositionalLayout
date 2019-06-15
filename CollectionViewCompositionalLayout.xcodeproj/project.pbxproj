@@ -18,6 +18,7 @@
 		BDE47E6122B565CF003511C5 /* CollectionViewwithBadgeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE47E6022B565CF003511C5 /* CollectionViewwithBadgeController.swift */; };
 		BDE47E6322B56889003511C5 /* BadgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE47E6222B56889003511C5 /* BadgeCell.swift */; };
 		BDE47E6522B57115003511C5 /* NestedGroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE47E6422B57115003511C5 /* NestedGroupController.swift */; };
+		BDE47E6722B57824003511C5 /* OrthagonalScrollingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE47E6622B57824003511C5 /* OrthagonalScrollingController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		BDE47E6022B565CF003511C5 /* CollectionViewwithBadgeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewwithBadgeController.swift; sourceTree = "<group>"; };
 		BDE47E6222B56889003511C5 /* BadgeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCell.swift; sourceTree = "<group>"; };
 		BDE47E6422B57115003511C5 /* NestedGroupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedGroupController.swift; sourceTree = "<group>"; };
+		BDE47E6622B57824003511C5 /* OrthagonalScrollingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrthagonalScrollingController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				BDE47E5E22B55C50003511C5 /* DistinctSectionsController.swift */,
 				BDE47E6022B565CF003511C5 /* CollectionViewwithBadgeController.swift */,
 				BDE47E6422B57115003511C5 /* NestedGroupController.swift */,
+				BDE47E6622B57824003511C5 /* OrthagonalScrollingController.swift */,
 				BDE47E5A22B54BC0003511C5 /* BaseCell.swift */,
 				BDE47E6222B56889003511C5 /* BadgeCell.swift */,
 				BDE47E4C22B540F0003511C5 /* Main.storyboard */,
@@ -160,6 +163,7 @@
 				BDE47E4722B540F0003511C5 /* AppDelegate.swift in Sources */,
 				BDE47E5F22B55C50003511C5 /* DistinctSectionsController.swift in Sources */,
 				BDE47E4922B540F0003511C5 /* SceneDelegate.swift in Sources */,
+				BDE47E6722B57824003511C5 /* OrthagonalScrollingController.swift in Sources */,
 				BDE47E6322B56889003511C5 /* BadgeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

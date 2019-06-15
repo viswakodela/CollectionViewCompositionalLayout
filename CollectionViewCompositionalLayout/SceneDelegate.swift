@@ -23,8 +23,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let distinctSectionsController = DistinctSectionsController()
         let badgesController = CollectionViewwithBadgeController()
         let nestedController = NestedGroupController()
+        let othagonalController = OrthagonalScrollingController()
         
-        window.rootViewController = UINavigationController(rootViewController: nestedController)
+        window.rootViewController = UINavigationController(rootViewController: othagonalController)
         self.window = window
         window.makeKeyAndVisible()
     }

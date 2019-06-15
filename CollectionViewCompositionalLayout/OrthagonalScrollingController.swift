@@ -1,5 +1,5 @@
 //
-//  NestedGroupController.swift
+//  OrthagonalScrollingController.swift
 //  CollectionViewCompositionalLayout
 //
 //  Created by Viswa Kodela on 6/15/19.
@@ -8,10 +8,9 @@
 
 import UIKit
 
-class NestedGroupController: UIViewController {
+class OrthagonalScrollingController: UIViewController {
     
-    private let nestedGridCellID = "nestedGridCellID"
-    
+    private let othagonalCellID = "othagonalCellID"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,10 +35,12 @@ class NestedGroupController: UIViewController {
             
             let trailingGroup = NSCollectionLayoutGroup.vertical(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .fractionalHeight(1.0)), subitem: trailingItem, count: 2)
             
-            let nestedGroup = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalWidth(0.4)), subitems: [leadingItem, middleGroup, trailingGroup])
+            let nestedGroup = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.85), heightDimension: .fractionalWidth(0.4)), subitems: [leadingItem, middleGroup, trailingGroup])
             
             
             let section = NSCollectionLayoutSection(group: nestedGroup)
+            section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
+            section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0)
             return section
         }
         return layout
@@ -58,7 +59,7 @@ class NestedGroupController: UIViewController {
     
     fileprivate func configureLayout() {
         view.backgroundColor = .white
-        collectionView.register(BaseCell.self, forCellWithReuseIdentifier: nestedGridCellID)
+        collectionView.register(BaseCell.self, forCellWithReuseIdentifier: othagonalCellID)
         navigationItem.title = "Grid Layout"
         
         view.addSubview(collectionView)
@@ -69,13 +70,18 @@ class NestedGroupController: UIViewController {
     }
 }
 
-extension NestedGroupController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension OrthagonalScrollingController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 3
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+        return 80
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: nestedGridCellID, for: indexPath) as! BaseCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: othagonalCellID, for: indexPath) as! BaseCell
         cell.numberLabel.text = "\(indexPath.item + 1)"
         if indexPath.item % 2 == 0 {
             cell.backgroundColor = .systemPink
@@ -85,5 +91,3 @@ extension NestedGroupController: UICollectionViewDelegate, UICollectionViewDataS
         return cell
     }
 }
-
-
